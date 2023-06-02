@@ -3,7 +3,6 @@ import sys
 import os
 from operator import itemgetter
 
-import pylons
 import ckan
 
 import ckan.lib.helpers as h
@@ -71,7 +70,7 @@ class ReorderController(BaseController):
 
         context = {'model': ckan.model,
                    'session': ckan.model.Session,
-                   'user': pylons.c.user or pylons.c.author}
+                   'user': ckan.common.c.user or ckan.common.c.author}
 
         #check for POST data
         if ckan.plugins.toolkit.request.method == 'POST':
@@ -115,7 +114,7 @@ class ReorderController(BaseController):
 
         context = {'model': ckan.model,
                    'session': ckan.model.Session,
-                   'user': pylons.c.user or pylons.c.author}
+                   'user': ckan.common.c.user or ckan.common.c.author}
 
         pk_info = package_info(dsname, context)
 
