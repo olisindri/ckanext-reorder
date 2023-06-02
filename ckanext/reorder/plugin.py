@@ -5,8 +5,8 @@ class ReorderPlugin(plugins.SingletonPlugin):
     """
     Setup plugin
     """
-    plugins.implements(plugins.IRoutes, inherit=True)
-    plugins.implements(plugins.IConfigurer, inherit=True)
+    plugins.implements(plugins.interfaces.IRoutes, inherit=True)
+    plugins.implements(plugins.interfaces.IConfigurer, inherit=True)
 
     def before_map(self, map):
 
